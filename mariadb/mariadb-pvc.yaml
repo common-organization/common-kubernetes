@@ -1,0 +1,13 @@
+# mariadb-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi  # PV와 동일하게 8Gi 설정
+  volumeName: mariadb-pv
+  storageClassName: mariadb
